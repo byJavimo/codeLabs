@@ -1,0 +1,25 @@
+.home-container {
+    margin-left: 10%; 
+}
+
+mat-card {
+    width: 80%;
+    padding: 0;
+    height: 90%; 
+}
+
+mat-card > img {
+    width: 100%;
+    margin: 0;
+}
+mat-card-header {
+    height: 20%;
+}
+
+mat-card-content {
+    margin-left: 5%; 
+}
+
+mat-card-footer {
+    margin-left: 5%; 
+}

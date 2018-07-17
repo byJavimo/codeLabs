@@ -1,0 +1,57 @@
+<div class="home-container" [ngSwitch]="posts.length">
+    <mat-grid-list *ngSwitchCase="1" cols="1" rowHeight="400">
+        <mat-grid-tile>
+            <mat-card>
+                <mat-card-header style="background-image: url('http://jsequeiros.com/sites/default/files/imagen-cachorro-comprimir.jpg')">
+                    <mat-card-title>
+                        <h2>Post title</h2>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                  Descripción de la carta
+                </mat-card-content>
+                <mat-card-footer>
+                  <img mat-card-avatar> 
+                  <span> Nombre autor </span>
+                </mat-card-footer>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list *ngSwitchCase="2" cols="2" rowHeight="400">
+        <mat-grid-tile *ngFor="let post of posts">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        <h2>{{post.title}}</h2>
+                    </mat-card-title>	
+                </mat-card-header>
+                <mat-card-content>
+                    {{post.description}}
+                </mat-card-content>
+                <mat-card-footer>
+                    <img mat-card-avatar>
+                    <span> {{post.author.name}} </span>
+                </mat-card-footer>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list *ngSwitchDefault cols="3" rowHeight="400">
+        <mat-grid-tile *ngFor="let post of posts">
+            <mat-card>
+                <img mat-card-image src="{{post.mainImg}}">                           
+                <mat-card-header>
+                    <mat-card-title>
+                        <h2>{{post.title}}</h2>
+                    </mat-card-title>	
+                </mat-card-header>
+                <mat-card-content>
+                    <p>{{post.description}}</p>
+                </mat-card-content>
+                <mat-card-footer>
+                    <img mat-card-avatar src="{{post.author.avatarImage}}">
+                    <span> {{post.author.name}} </span>
+                </mat-card-footer>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
